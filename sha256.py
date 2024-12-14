@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 from bitstring import BitArray
 
 def rotr(a: int, n: int) -> int:
