@@ -90,8 +90,8 @@ def sha256(message: bytes) -> bytes:
         for x, val in enumerate((a, b, c, d, e, f, g, h)):
             H[x] = add32(H[x], val)
 
-    return b"".join(x.to_bytes(4, "big") for x in H)
+    return b"".join(x.to_bytes(4) for x in H)
 
 if __name__ == "__main__":
     inp = input("What message would you like to hash? ")
-    print(f"The hexadecimal representation of the hash of \"{inp}\" is {BitArray(sha256(inp.encode())).hex}")
+    print(f"The hexadecimal representation of the SHA256 hash of \"{inp}\" is {BitArray(sha256(inp.encode())).hex}")
